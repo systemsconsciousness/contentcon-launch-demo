@@ -51,15 +51,16 @@ body p {
   margin: 0 auto;
   text-align: center;
   padding: 5px 0;
-  color: #222222;
+  color: #ffffff;
 }
 
 .note-div a {
   text-decoration: underline;
+
 }
 
 .note-div a:hover {
-  color: #ffffff;
+  color: #444444;
 }
 
 nav ul {
