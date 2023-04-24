@@ -44,7 +44,7 @@ body p {
 }
 
 .note-div {
-  background: #f2efff;
+  background: #715cdd;
 }
 
 .note-div p {
@@ -52,6 +52,14 @@ body p {
   text-align: center;
   padding: 5px 0;
   color: #222222;
+}
+
+.note-div a {
+  text-decoration: underline;
+}
+
+.note-div a:hover {
+  color: #ffffff;
 }
 
 nav ul {
@@ -398,7 +406,8 @@ footer a {
 }
 
 .content-section {
-  width: 350px;
+  width: 260px;
+  font-size: 18px;
 }
 
 .content-section a {
