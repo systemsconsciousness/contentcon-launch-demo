@@ -11,14 +11,16 @@ export function middleware(req: NextRequest) {
     const [user, pwd] = atob(authValue).split(':')
 
     if (user === process.env.BASIC_AUTH_USERNAME && pwd === process.env.BASIC_AUTH_PASSWORD) {
+      const response = NextResponse.next()
+      response.cookies.set('vercel', 'fast')
       response.cookies.set({
-        name: 'authenticated',
-        value: 'true',
+        name: 'vercel',
+        value: 'fast',
         path: '/test',
       })
-      cookie = response.cookies.get('authenticated')
-      console.log(cookie) // => { name: 'vercel', value: 'fast', Path: '/test' }    
-      return NextResponse.next()
+      cookie = response.cookies.get('vercel')
+      console.log(cookie) // => { name: 'vercel', value: 'fast', Path: '/test' }
+      return response
     }
   }
   url.pathname = '/api/basicauth'
