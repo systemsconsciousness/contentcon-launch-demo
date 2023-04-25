@@ -24,9 +24,7 @@ export function middleware(req: NextRequest) {
         value: 'fast',
         path: '/test',
       })
-      cookie = response.cookies.get('vercel')
-      console.log(cookie) // => { name: 'vercel', value: 'fast', Path: '/test' }
-      return response
+     return response
     }
   }
   url.pathname = '/api/basicauth'
