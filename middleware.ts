@@ -14,7 +14,7 @@ export function middleware(req: NextRequest) {
       return NextResponse.next()
     }
   }
-  url.pathname = '/pages/api/basicauth'
+  url.pathname = '/api/basicauth'
 
   return NextResponse.rewrite(url)
 }
