@@ -15,15 +15,10 @@ export function middleware(req: NextRequest) {
     const authValue = basicAuth.split(' ')[1]
     const [user, pwd] = atob(authValue).split(':')
     
-
+    console.log("Hey Dean!")
     if (user === process.env.BASIC_AUTH_USERNAME && pwd === process.env.BASIC_AUTH_PASSWORD) {
       const response = NextResponse.next()
       response.cookies.set('vercel', 'fast')
-      response.cookies.set({
-        name: 'vercel',
-        value: 'fast',
-        path: '/test',
-      })
       cookie = response.cookies.get('vercel')
       console.log(cookie) // => { name: 'vercel', value: 'fast', Path: '/test' }
       return response
