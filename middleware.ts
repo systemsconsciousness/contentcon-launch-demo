@@ -11,6 +11,13 @@ export function middleware(req: NextRequest) {
     const [user, pwd] = atob(authValue).split(':')
 
     if (user === process.env.BASIC_AUTH_USERNAME && pwd === process.env.BASIC_AUTH_PASSWORD) {
+      response.cookies.set({
+        name: 'authenticated',
+        value: 'true',
+        path: '/test',
+      })
+      cookie = response.cookies.get('authenticated')
+      console.log(cookie) // => { name: 'vercel', value: 'fast', Path: '/test' }    
       return NextResponse.next()
     }
   }
