@@ -20,5 +20,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: '/protected', ///:path*
+  matcher: '/protected/:path*', // OR change this to '/:path' for all pages
 }
